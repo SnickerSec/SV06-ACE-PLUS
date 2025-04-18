@@ -1,0 +1,273 @@
+-------------------- Log Start | Sun Jun 18 14:56:13 2023 --------------------
+platform: Linux-5.10.160-aarch64-with-glibc2.31
+data_path: /home/sovol/printer_data
+is_default_data_path: False
+config_file: /home/sovol/printer_data/config/moonraker.conf
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: False
+instance_uuid: 0f799796ecf7457e85d0acb060591ee1
+unix_socket_path: /home/sovol/printer_data/comms/moonraker.sock
+software_version: v0.8.0-387-gb8ba6c0
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker.git
+modified_files: []
+unofficial_components: []
+log_file: /home/sovol/printer_data/logs/moonraker.log
+python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+launch_args: /home/sovol/moonraker-env/bin/python /home/sovol/moonraker/moonraker/moonraker.py -d /home/sovol/printer_data
+msgspec_enabled: False
+uvloop_enabled: False
+2023-06-18 14:56:13,249 [confighelper.py:read_file()] - Configuration File '/home/sovol/printer_data/config/moonraker.conf' parsed, total size: 551 B
+2023-06-18 14:56:13,251 [server.py:add_log_rollover_item()] - 
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /home/sovol/printer_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+cors_domains = 
+	*.lan
+	*.local
+	*://localhost
+	*://localhost:*
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
+
+[octoprint_compat]
+
+[history]
+
+[timelapse]
+output_path = ~/printer_data/timelapse/
+frame_path = /tmp/timelapse/
+ffmpeg_binary_path = /usr/bin/ffmpeg
+
+#################################################################
+All Configuration Files:
+/home/sovol/printer_data/config/moonraker.conf
+#################################################################
+2023-06-18 14:56:14,713 [server.py:load_component()] - Component (secrets) loaded
+2023-06-18 14:56:14,802 [server.py:load_component()] - Component (template) loaded
+2023-06-18 14:56:14,899 [server.py:load_component()] - Component (klippy_connection) loaded
+2023-06-18 14:56:19,547 [server.py:load_component()] - Component (application) loaded
+2023-06-18 14:56:19,712 [server.py:load_component()] - Component (websockets) loaded
+2023-06-18 14:56:20,160 [server.py:load_component()] - Component (dbus_manager) loaded
+2023-06-18 14:56:20,275 [server.py:add_log_rollover_item()] - Loading Sqlite database provider. Sqlite Version: 3.34.1
+2023-06-18 14:56:20,299 [server.py:add_log_rollover_item()] - Unsafe Shutdown Count: 95
+2023-06-18 14:56:20,326 [server.py:load_component()] - Component (database) loaded
+2023-06-18 14:56:20,546 [file_manager.py:__init__()] - Using File System Observer: inotify
+2023-06-18 14:56:20,691 [server.py:load_component()] - Component (file_manager) loaded
+2023-06-18 14:56:20,848 [database.py:register_table()] - Found registered table authorized_users
+2023-06-18 14:56:20,872 [authorization.py:__init__()] - Authorization Configuration Loaded
+Trusted Clients:
+10.0.0.0/8
+127.0.0.0/8
+169.254.0.0/16
+172.16.0.0/12
+192.168.0.0/16
+fe80::/10
+::1/128
+CORS Domains:
+.*\.lan
+.*\.local
+.*://localhost
+.*://localhost:.*
+.*://my\.mainsail\.xyz
+.*://app\.fluidd\.xyz
+2023-06-18 14:56:20,934 [server.py:load_component()] - Component (authorization) loaded
+2023-06-18 14:56:20,971 [server.py:load_component()] - Component (klippy_apis) loaded
+2023-06-18 14:56:22,096 [server.py:add_log_rollover_item()] - 
+System Info:
+
+***python***
+  version: (3, 9, 2, 'final', 0)
+  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+
+***cpu_info***
+  cpu_count: 4
+  bits: 64bit
+  processor: aarch64
+  cpu_desc: 
+  serial_number: accd9cd427149020
+  hardware_desc: 
+  model: 
+  total_memory: 498752
+  memory_units: kB
+
+***sd_info***
+  manufacturer_id: d6
+  manufacturer: Unknown
+  oem_id: 0103
+  product_name: 58A39
+  product_revision: 3.8
+  serial_number: 11c24896
+  manufacturer_date: 10/2028
+  capacity: Unknown
+  total_bytes: 0
+
+***distribution***
+  name: Debian GNU/Linux 11 (bullseye)
+  id: debian
+  version: 11
+  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
+  like: 
+  codename: bullseye
+  release_info: {}
+  kernel_version: 5.10.160
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+2023-06-18 14:56:22,131 [server.py:load_component()] - Component (shell_command) loaded
+2023-06-18 14:56:22,133 [machine.py:__init__()] - Using System Provider: systemd_dbus
+2023-06-18 14:56:22,237 [server.py:add_log_rollover_item()] - Module libcamera unavailble, import failed
+2023-06-18 14:56:22,238 [server.py:load_component()] - Component (machine) loaded
+2023-06-18 14:56:22,271 [server.py:load_component()] - Component (data_store) loaded
+2023-06-18 14:56:22,297 [proc_stats.py:__init__()] - Unable to find 'vcgencmd', throttle checking disabled
+2023-06-18 14:56:22,310 [server.py:load_component()] - Component (proc_stats) loaded
+2023-06-18 14:56:22,330 [server.py:load_component()] - Component (job_state) loaded
+2023-06-18 14:56:22,388 [server.py:load_component()] - Component (job_queue) loaded
+2023-06-18 14:56:22,414 [database.py:register_table()] - Found registered table job_history
+2023-06-18 14:56:22,418 [database.py:register_table()] - Found registered table job_totals
+2023-06-18 14:56:22,439 [server.py:load_component()] - Component (history) loaded
+2023-06-18 14:56:22,520 [server.py:load_component()] - Component (http_client) loaded
+2023-06-18 14:56:22,592 [server.py:load_component()] - Component (announcements) loaded
+2023-06-18 14:56:22,633 [server.py:load_component()] - Component (webcam) loaded
+2023-06-18 14:56:22,671 [server.py:load_component()] - Component (extensions) loaded
+2023-06-18 14:56:22,744 [server.py:load_component()] - Component (octoprint_compat) loaded
+2023-06-18 14:56:22,826 [server.py:load_component()] - Component (timelapse) loaded
+2023-06-18 14:56:22,856 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
+2023-06-18 14:56:22,937 [server.py:_initialize_component()] - Performing Component Post Init: [database]
+2023-06-18 14:56:23,032 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
+2023-06-18 14:56:23,063 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
+2023-06-18 14:56:23,078 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
+2023-06-18 14:56:23,091 [machine.py:validation_init()] - Installation version in database up to date
+2023-06-18 14:56:24,911 [machine.py:check_virt_status()] - No Virtualization Detected
+2023-06-18 14:56:25,415 [server.py:add_log_rollover_item()] - 
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice', 'network-online.target']
+**After=['sysinit.target', '-.mount', 'systemd-journald.socket', 'basic.target', 'system.slice', 'network-online.target']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/sovol/printer_data/systemd/moonraker.env
+**ExecStart=/home/sovol/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=/home/sovol/moonraker
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=sovol
+2023-06-18 14:56:25,417 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
+2023-06-18 14:56:25,418 [server.py:_initialize_component()] - Performing Component Post Init: [history]
+2023-06-18 14:56:25,453 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
+2023-06-18 14:56:25,503 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
+2023-06-18 14:56:25,539 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
+2023-06-18 14:56:25,541 [server.py:_initialize_component()] - Performing Component Post Init: [timelapse]
+2023-06-18 14:56:25,542 [timelapse.py:getWebcamConfig()] - WARNING: no camera configured, using the fallback config
+2023-06-18 14:56:25,626 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice']
+**After=['basic.target', 'klipper-mcu.service', 'sysinit.target', 'network-online.target', '-.mount', 'systemd-journald.socket', 'system.slice']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/sovol/printer_data/systemd/klipper.env
+**ExecStart=/home/sovol/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/sovol/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=sovol
+2023-06-18 14:56:25,681 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/sovol/printer_data/comms/moonraker.sock'
+2023-06-18 14:56:25,707 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: sovol
+2023-06-18 14:56:25,720 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
+2023-06-18 14:56:27,361 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
+2023-06-18 14:56:27,370 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 16.15ms
+2023-06-18 14:56:27,373 [websockets.py:open()] - Websocket Opened: ID: 548561278816, Proxied: False, User Agent: WebSocket++/0.8.2, Host Name: localhost
+2023-06-18 14:56:27,543 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:27,546 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.subscribe, Code: -32601, Message: Method not found
+2023-06-18 14:56:27,747 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2023-06-18 14:56:27,812 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:27,899 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_API_KEY_USER_] 35.21ms
+2023-06-18 14:56:27,902 [websockets.py:open()] - Websocket Opened: ID: 548561691408, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2023-06-18 14:56:28,780 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:29,782 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:29,854 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2023-06-18 14:56:30,784 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:31,788 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:32,794 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:33,801 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:34,807 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:35,819 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:36,813 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:37,829 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:38,832 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:39,841 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:40,843 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:41,620 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2023-06-18 14:56:41,871 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:42,037 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice']
+**After=['system.slice', '-.mount', 'sysinit.target', 'klipper-mcu.service', 'systemd-journald.socket', 'basic.target', 'network-online.target']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/sovol/printer_data/systemd/klipper.env
+**ExecStart=/home/sovol/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/sovol/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=sovol
+2023-06-18 14:56:42,857 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:44,058 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:44,859 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:45,870 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:46,877 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:47,883 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:48,890 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:49,907 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: -32601, Message: Method not found
+2023-06-18 14:56:50,136 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-267-g12cd1d9e-dirty
+2023-06-18 14:57:36,370 [machine.py:_find_public_ip()] - Failed to detect local IP address
+2023-06-18 14:57:54,605 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: 
+Printer is not ready
+The klippy host software is attempting to connect.  Please
+retry in a few moments.
+
+2023-06-18 14:57:56,518 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.9.18
+2023-06-18 14:57:56,523 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.9.18

@@ -1,0 +1,235 @@
+-------------------- Log Start | Tue Mar 25 07:47:04 2025 --------------------
+platform: Linux-5.10.160-aarch64-with-glibc2.31
+data_path: /home/sovol/printer_data
+is_default_data_path: False
+config_file: /home/sovol/printer_data/config/moonraker.conf
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: False
+instance_uuid: 0f799796ecf7457e85d0acb060591ee1
+unix_socket_path: /home/sovol/printer_data/comms/moonraker.sock
+software_version: v0.8.0-387-gb8ba6c0
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker.git
+modified_files: []
+unofficial_components: []
+log_file: /home/sovol/printer_data/logs/moonraker.log
+python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+launch_args: /home/sovol/moonraker-env/bin/python /home/sovol/moonraker/moonraker/moonraker.py -d /home/sovol/printer_data
+msgspec_enabled: False
+uvloop_enabled: False
+
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /home/sovol/printer_data/comms/klippy.sock
+
+[authorization]
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+cors_domains = 
+	*.lan
+	*.local
+	*://localhost
+	*://localhost:*
+	*://my.mainsail.xyz
+	*://app.fluidd.xyz
+
+[octoprint_compat]
+
+[history]
+
+[timelapse]
+output_path = ~/printer_data/timelapse/
+frame_path = /tmp/timelapse/
+ffmpeg_binary_path = /usr/bin/ffmpeg
+
+#################################################################
+All Configuration Files:
+/home/sovol/printer_data/config/moonraker.conf
+#################################################################
+Loading Sqlite database provider. Sqlite Version: 3.34.1
+Unsafe Shutdown Count: 95
+
+System Info:
+
+***python***
+  version: (3, 9, 2, 'final', 0)
+  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+
+***cpu_info***
+  cpu_count: 4
+  bits: 64bit
+  processor: aarch64
+  cpu_desc: 
+  serial_number: accd9cd427149020
+  hardware_desc: 
+  model: 
+  total_memory: 498752
+  memory_units: kB
+
+***sd_info***
+  manufacturer_id: d6
+  manufacturer: Unknown
+  oem_id: 0103
+  product_name: 58A39
+  product_revision: 3.8
+  serial_number: 11c24896
+  manufacturer_date: 10/2028
+  capacity: Unknown
+  total_bytes: 0
+
+***distribution***
+  name: Debian GNU/Linux 11 (bullseye)
+  id: debian
+  version: 11
+  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
+  like: 
+  codename: bullseye
+  release_info: {}
+  kernel_version: 5.10.160
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+Module libcamera unavailble, import failed
+
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice', 'network-online.target']
+**After=['sysinit.target', '-.mount', 'systemd-journald.socket', 'basic.target', 'system.slice', 'network-online.target']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/sovol/printer_data/systemd/moonraker.env
+**ExecStart=/home/sovol/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=/home/sovol/moonraker
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=sovol
+
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice']
+**After=['system.slice', '-.mount', 'sysinit.target', 'klipper-mcu.service', 'systemd-journald.socket', 'basic.target', 'network-online.target']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/sovol/printer_data/systemd/klipper.env
+**ExecStart=/home/sovol/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/sovol/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=sovol
+Klipper Version: v0.12.0-267-g12cd1d9e-dirty
+2025-03-25 07:47:04,689 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: 
+Printer is not ready
+The klippy host software is attempting to connect.  Please
+retry in a few moments.
+
+2025-03-25 07:47:15,305 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2025-03-25 07:47:15,313 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2025-03-25 07:47:15,329 [klippy_connection.py:_check_ready()] - 
+mcu 'extra_mcu': Unable to connect
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Error configuring printer
+
+2025-03-25 07:47:24,639 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: mcu 'extra_mcu': Unable to connect
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Error configuring printer
+
+2025-03-25 07:47:24,662 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2025-03-25 07:47:24,679 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: 503, Message: Klippy Host not connected
+2025-03-25 07:47:24,693 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.subscribe, Code: 503, Message: Klippy Host not connected
+2025-03-25 07:47:24,729 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: 503, Message: Klippy Host not connected
+2025-03-25 07:47:25,060 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: 503, Message: Klippy Host not connected
+2025-03-25 07:47:25,950 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2025-03-25 07:49:01,241 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2025-03-25 07:49:01,249 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2025-03-25 07:49:01,264 [klippy_connection.py:_check_ready()] - 
+mcu 'extra_mcu': Unable to connect
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Error configuring printer
+
+2025-03-25 07:49:06,725 [file_manager.py:complete_file_write()] - Invalid file write event: Macro.cfg.dpkg-new
+2025-03-25 07:49:06,726 [file_manager.py:complete_file_write()] - Invalid file write event: moonraker-obico.cfg.dpkg-new
+2025-03-25 07:49:06,727 [file_manager.py:complete_file_write()] - Invalid file write event: printer.cfg.dpkg-new
+2025-03-25 07:49:06,728 [file_manager.py:complete_file_write()] - Invalid file write event: skiprs_config.ini.dpkg-new
+2025-03-25 07:49:06,729 [file_manager.py:complete_file_write()] - Invalid file write event: skiprs_config.ini.bak.dpkg-new
+2025-03-25 07:49:07,482 [file_manager.py:complete_file_write()] - Invalid file write event: Macro.cfg.dpkg-new
+2025-03-25 07:49:07,494 [file_manager.py:complete_file_write()] - Invalid file write event: moonraker-obico.cfg.dpkg-new
+2025-03-25 07:49:07,507 [file_manager.py:complete_file_write()] - Invalid file write event: printer.cfg.dpkg-new
+2025-03-25 07:49:07,516 [file_manager.py:complete_file_write()] - Invalid file write event: skiprs_config.ini.dpkg-new
+2025-03-25 07:49:07,526 [file_manager.py:complete_file_write()] - Invalid file write event: skiprs_config.ini.bak.dpkg-new
+2025-03-25 07:49:10,829 [websockets.py:on_close()] - Websocket Closed: ID: 548561278816 Close Code: None, Close Reason: None, Pong Time Elapsed: 3.44
+2025-03-25 07:49:11,066 [file_manager.py:complete_file_write()] - Invalid file write event: skiprs_conf.ini
+2025-03-25 07:49:11,068 [file_manager.py:complete_file_write()] - Invalid file write event: skiprs_conf.ini.bak
+2025-03-25 07:49:11,074 [file_manager.py:complete_file_write()] - Invalid file write event: skiprs_conf.ini
+2025-03-25 07:49:11,078 [file_manager.py:complete_file_write()] - Invalid file write event: skiprs_conf.ini.bak
+2025-03-25 07:49:11,079 [file_manager.py:complete_file_write()] - Invalid file write event: skiprs_conf.ini
+2025-03-25 07:49:11,110 [application.py:log_request()] - 101 GET /websocket (127.0.0.1) [_TRUSTED_USER_] 7.74ms
+2025-03-25 07:49:11,113 [websockets.py:open()] - Websocket Opened: ID: 548561725664, Proxied: False, User Agent: WebSocket++/0.8.2, Host Name: localhost
+2025-03-25 07:49:23,271 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.gcode.script, Code: 400, Message: mcu 'extra_mcu': Unable to connect
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Error configuring printer
+
+2025-03-25 07:49:23,297 [klippy_connection.py:_on_connection_closed()] - Klippy Connection Removed
+2025-03-25 07:49:23,310 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: 503, Message: Klippy Disconnected
+2025-03-25 07:49:23,320 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: 503, Message: Klippy Host not connected
+2025-03-25 07:49:23,334 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.subscribe, Code: 503, Message: Klippy Host not connected
+2025-03-25 07:49:23,388 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: 503, Message: Klippy Host not connected
+2025-03-25 07:49:24,257 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: printer.objects.query, Code: 503, Message: Klippy Host not connected
+2025-03-25 07:49:24,593 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2025-03-25 07:49:24,863 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['system.slice', 'sysinit.target']
+**After=['network-online.target', 'basic.target', '-.mount', 'system.slice', 'sysinit.target', 'klipper-mcu.service', 'systemd-journald.socket']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/sovol/printer_data/systemd/klipper.env
+**ExecStart=/home/sovol/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/sovol/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=sovol
